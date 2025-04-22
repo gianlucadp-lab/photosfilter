@@ -1,0 +1,29 @@
+workflows:
+  dupplifilter-release:
+    name: DuppliFilter Build iOS + Android
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      vars:
+        FLUTTER_BUILD_DIR: build
+    scripts:
+      - name: Get dependencies
+        script: |
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --release
+      - name: Build IPA
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - gianluca@depino.eu
+        notify:
+          success: true
+          failure: true
