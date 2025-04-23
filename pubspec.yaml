@@ -10,9 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   file_picker:
-    path: C:/Users/info/Documents/file_picker_ios_only
+    path: file_picker_ios_only
   image: ^4.1.3
-  share_plus: 11.0.0
+  share_plus: ^11.0.0
 
 dev_dependencies:
   flutter_test:
