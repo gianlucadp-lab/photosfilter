@@ -78,7 +78,7 @@ class _DuppliFilterHomeState extends State<DuppliFilterHome> {
       for (int x = 0; x < a.width; x++) {
         final p1 = a.getPixel(x, y);
         final p2 = b.getPixel(x, y);
-        sum += (img.getLuminance(p1) - img.getLuminance(p2)).abs();
+        sum += (img.getLuminance(p1) - img.getLuminance(p2)).abs().toInt();
       }
     }
     return sum / (a.width * a.height);
