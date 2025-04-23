@@ -19,3 +19,16 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+
+// 👇 PATCH DINAMICA PER NAMESPACE MANCANTE
+subprojects {
+    afterEvaluate {
+        if (project.plugins.hasPlugin("com.android.library")) {
+            extensions.configure<com.android.build.gradle.LibraryExtension>("android") {
+                if (namespace == null) {
+                    namespace = "com.example.${project.name}"
+                }
+            }
+        }
+    }
+}
