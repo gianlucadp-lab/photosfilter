@@ -105,7 +105,7 @@ class _DuppliFilterHomeState extends State<DuppliFilterHome> {
               Column(children: [
                 SizedBox(height: 20),
                 Text('Trovate ${images.length - filtered.length} immagini troppo simili.'),
-                Text('Vuoi filtrare prima dell'invio?'),
+                Text("Vuoi filtrare prima dell'invio?"),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
